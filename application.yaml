@@ -5,12 +5,18 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: unguard
-    repoURL: https://github.com/dynatrace-oss/unguard
-    targetRevision: 0.8.0
-    helm:
-      releaseName: unguard
+  sources:
+    - chart: mariadb
+      repoURL: https://charts.bitnami.com/bitnami
+      targetRevision: 12.2.4
+      helm:
+        releaseName: unguard-mariadb
+        parameters:
+          - name: "service.typprimary.persistence.enabled"
+            value: "false"
+    - chart: unguard
+      repoURL: ghcr.io/dynatrace-oss/unguard/chart
+      targetRevision: 0.8.0
   destination:
     server: https://kubernetes.default.svc
     namespace: unguard
