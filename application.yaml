@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: unguard
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: unguard
+    repoURL: https://github.com/dynatrace-oss/unguard
+    targetRevision: 0.8.0
+    helm:
+      releaseName: unguard
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: unguard
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
