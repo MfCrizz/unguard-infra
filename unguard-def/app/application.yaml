@@ -5,6 +5,10 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: unguard
   sources:
     - chart: mariadb
       repoURL: https://charts.bitnami.com/bitnami
@@ -17,9 +21,7 @@ spec:
     - chart: unguard
       repoURL: ghcr.io/dynatrace-oss/unguard/chart
       targetRevision: 0.8.0
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: unguard
+
 
   syncPolicy:
     syncOptions:
