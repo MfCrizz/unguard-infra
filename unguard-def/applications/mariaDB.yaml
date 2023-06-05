@@ -10,7 +10,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: unguard
-  sources:
+  source:
     chart: mariadb
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 12.2.4

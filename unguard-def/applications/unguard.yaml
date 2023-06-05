@@ -10,7 +10,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: unguard
-  sources:
+  source:
     chart: unguard
     repoURL: ghcr.io/dynatrace-oss/unguard/chart
     targetRevision: 0.8.0
