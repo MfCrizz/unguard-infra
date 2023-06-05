@@ -10,7 +10,7 @@ spec:
   project: unguard
   source:
     path: unguard
-    repoURL: https://github.com/MfCrizz/unguard-infra
+    repoURL: https://github.com/MfCrizz/unguard-infra.git
     targetRevision: HEAD
   syncPolicy:
     automated:
