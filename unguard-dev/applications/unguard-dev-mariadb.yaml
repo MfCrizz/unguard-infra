@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: unguard-def-mariadb
+  name: unguard-dev-mariadb
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
