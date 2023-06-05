@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mariadb-unguard-dev
+  name: unguard-def-mariadb
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -17,7 +17,7 @@ spec:
     helm:
       releaseName: unguard-mariadb
       parameters:
-        - name: "service.typprimary.persistence.enabled"
+        - name: "service.primary.persistence.enabled"
           value: "false"
   syncPolicy:
     syncOptions:
