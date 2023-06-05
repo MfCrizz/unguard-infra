@@ -18,7 +18,9 @@ spec:
         parameters:
           - name: "service.typprimary.persistence.enabled"
             value: "false"
-
+    - chart: unguard
+      repoURL: ghcr.io/dynatrace-oss/unguard/chart
+      targetRevision: 0.8.0
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
