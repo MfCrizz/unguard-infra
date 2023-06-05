@@ -9,7 +9,7 @@ spec:
     namespace: argocd
   project: unguard
   source:
-    path: unguard
+    path: unguard-def/app
     repoURL: https://github.com/MfCrizz/unguard-infra.git
     targetRevision: HEAD
   syncPolicy:
