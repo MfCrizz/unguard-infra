@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mariaDB-unguard-dev
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: unguard
+  sources:
+    chart: mariadb
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 12.2.4
+    helm:
+      releaseName: unguard-mariadb
+      parameters:
+        - name: "service.typprimary.persistence.enabled"
+          value: "false"
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

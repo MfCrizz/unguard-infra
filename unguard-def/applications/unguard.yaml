@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: unguard-dev
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,17 +11,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: unguard
   sources:
-    - chart: mariadb
-      repoURL: https://charts.bitnami.com/bitnami
-      targetRevision: 12.2.4
-      helm:
-        releaseName: unguard-mariadb
-        parameters:
-          - name: "service.typprimary.persistence.enabled"
-            value: "false"
-    - chart: unguard
-      repoURL: ghcr.io/dynatrace-oss/unguard/chart
-      targetRevision: 0.8.0
+    chart: unguard
+    repoURL: ghcr.io/dynatrace-oss/unguard/chart
+    targetRevision: 0.8.0
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
