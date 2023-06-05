@@ -3,7 +3,6 @@ kind: Application
 metadata:
   name: unguard-dev
 spec:
-  project: unguard
   sources:
     - chart: mariadb
       repoURL: https://charts.bitnami.com/bitnami

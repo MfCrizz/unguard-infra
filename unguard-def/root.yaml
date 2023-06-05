@@ -7,7 +7,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: unguard
   source:
     path: unguard-def/app
     repoURL: https://github.com/MfCrizz/unguard-infra.git
