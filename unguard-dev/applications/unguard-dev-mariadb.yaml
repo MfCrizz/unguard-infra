@@ -17,7 +17,7 @@ spec:
     helm:
       releaseName: unguard-mariadb
       parameters:
-        - name: "service.primary.persistence.enabled"
+        - name: "primary.persistence.enabled"
           value: "false"
   syncPolicy:
     syncOptions:
