@@ -1,0 +1,2 @@
+mariaDB:
+  serviceName: unguard-mariadb-test
