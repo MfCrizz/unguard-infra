@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: argocd
   source:
-    path: unguard-dev/applications
+    path: unguard/applications
     repoURL: https://github.com/MfCrizz/unguard-infra.git
     targetRevision: HEAD
   syncPolicy:
