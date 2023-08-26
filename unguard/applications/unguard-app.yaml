@@ -16,6 +16,13 @@ spec:
     - chart: unguard
       repoURL: ghcr.io/dynatrace-oss/unguard/chart
       targetRevision: 0.8.0
+      helm:
+        releaseName: unguard
+        valueFiles:
+          - $values/unguard/values.yaml
+    - repoURL: https://github.com/MfCrizz/unguard-infra.git
+      targetRevision: HEAD
+      ref: values
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
